@@ -1,11 +1,15 @@
 import React from 'react'
 import Header from './header'
+import ContestPreview from './contestPreview';
 
-const App = () => {
+const App = (props) => {
     return (
         <div>
-            <Header name='Georgie' />
             <h2>Hello from Component</h2>
+            <Header name='Georgie' />
+            {props.contests.map(contest => 
+                 <ContestPreview key={contest.id} {...contest} />
+            )}
         </div>
     )
 }
