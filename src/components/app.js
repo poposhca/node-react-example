@@ -8,17 +8,25 @@ class App extends React.Component
     constructor(props){
         super(props)
         this.state = {
-            contests: []
+            contests: props.data,
+            hasLoaded: props.load
         }
     }
 
+    static defaultProps = {
+        hasLoaded: false,
+        data: []
+    }
+
     componentDidMount(){
-        axios.get('/api/contests')
-        .then(resp => {
-            console.log(resp)
-            this.setState({ contests: resp.data.contests })
-        })
-        .catch(console.error)
+        if(this.state.hasLoaded == false){
+            axios.get('/api/contests')
+            .then(resp => {
+                console.log(resp)
+                this.setState({ contests: resp.data.contests })
+            })
+            .catch(console.error)
+        }
     }
 
     render() {

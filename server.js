@@ -18,6 +18,7 @@ import express from 'express'
 import router from './api'
 import config from './config'
 import fs from 'fs'
+import data from './src/testData'
 
 const app = express()
 
@@ -33,7 +34,7 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/test', function (req, res){
+app.get('/preload', function (req, res){
     res.render('index', {
         content : '<em>Hello from node</em>'
     })
