@@ -28,7 +28,9 @@ app.use('/api', router)
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-    res.send('test')
+    res.render('index', {
+        content : '<em>Hello from node</em>'
+    })
 })
 
 app.get('/test', function (req, res){

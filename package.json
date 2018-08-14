@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "ajs": "^1.2.19",
+    "axios": "^0.18.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mongodb": "^3.1.1",
